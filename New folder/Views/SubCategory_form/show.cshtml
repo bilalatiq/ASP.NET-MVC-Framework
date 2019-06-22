@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DB_ProjectTRY.Models.SubCategory>
+
+@{
+    ViewBag.Title = "show";
+}
+
+<h2>show</h2>
+
+<p>
+    @Html.ActionLink("Create New", "add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.subcat_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subcat_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subcat_image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sbcat_fk_ad_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sbcat_fk_cat_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.subcat_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subcat_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subcat_image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sbcat_fk_ad_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sbcat_fk_cat_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "update", new { id=item.subcat_id }) |
+            @Html.ActionLink("Delete", "delete", new { id = item.subcat_id })
+        </td>
+    </tr>
+}
+
+</table>

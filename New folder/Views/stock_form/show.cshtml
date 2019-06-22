@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DB_ProjectTRY.Models.stock>
+
+@{
+    ViewBag.Title = "show";
+}
+
+<h2>show</h2>
+
+<p>
+    @Html.ActionLink("Create New", "add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.st_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_fk_ad_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.st_fk_prd_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.st_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.st_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.st_qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.st_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.st_fk_ad_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.st_fk_prd_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "update", new { id=item.st_id }) |
+            @Html.ActionLink("Delete", "delete", new { id = item.st_id })
+        </td>
+    </tr>
+}
+
+</table>

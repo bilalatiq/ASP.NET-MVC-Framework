@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DB_ProjectTRY.Models.product>
+
+@{
+    ViewBag.Title = "show";
+}
+
+<h2>show</h2>
+
+<p>
+    @Html.ActionLink("Create New", "add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.prd_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prd_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prd_dis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prd_selprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prd_cstprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prd_fk_cat_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prd_fk_sbcat_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prd_fk_ad_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.prd_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prd_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prd_dis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prd_selprice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prd_cstprice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prd_fk_cat_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prd_fk_sbcat_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prd_fk_ad_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "update", new { id=item.prd_id }) |
+            @Html.ActionLink("Delete", "delete", new { id = item.prd_id })
+        </td>
+    </tr>
+}
+
+</table>

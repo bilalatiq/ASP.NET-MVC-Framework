@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DB_ProjectTRY.Models.invoice>
+
+@{
+    ViewBag.Title = "show";
+}
+
+<h2>show</h2>
+
+<p>
+    @Html.ActionLink("Create New", "add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.in_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.in_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.in_fk_us_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.in_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.in_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.in_fk_us_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "update", new { id=item.in_id}) |
+            @Html.ActionLink("Delete", "delete", new { id = item.in_id })
+        </td>
+    </tr>
+}
+
+</table>

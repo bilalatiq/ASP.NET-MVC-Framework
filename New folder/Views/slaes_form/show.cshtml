@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DB_ProjectTRY.Models.sales>
+
+@{
+    ViewBag.Title = "show";
+}
+
+<h2>show</h2>
+
+<p>
+    @Html.ActionLink("Create New", "add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sls_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sls_qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sls_fk_in_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sls_fk_prd_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sls_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sls_qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sls_fk_in_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sls_fk_prd_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "update", new {id=item.sls_id }) |
+            @Html.ActionLink("Delete", "delete", new { id = item.sls_id })
+        </td>
+    </tr>
+}
+
+</table>
